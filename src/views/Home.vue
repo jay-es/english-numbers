@@ -1,18 +1,38 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <section class="hero is-primary">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            English Numbers
+          </h1>
+          <!-- <h2 class="subtitle">
+            Primary subtitle
+          </h2> -->
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <router-link
+        class="button is-primary is-large is-outlined"
+        to="/card"
+      >
+        Start
+      </router-link>
+      <router-link
+        class="button is-primary is-large is-outlined"
+        to="/list"
+      >
+        List
+      </router-link>
+    </section>
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
-import HelloWorld from '@/components/HelloWorld.vue' // @ is an alias to /src
-
-@Component({
-  components: {
-  HelloWorld,
-  },
-  })
-export default class Home extends Vue {}
-</script>
+<style lang="scss" scoped>
+.button {
+  display: block;
+  margin: 1em auto;
+  width: 200px;
+}
+</style>
