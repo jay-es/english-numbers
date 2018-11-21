@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+    <the-header/>
+
     <router-view/>
 
     <section v-if="!isHome" class="section">
@@ -22,8 +24,13 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
+import TheHeader from '@/components/TheHeader.vue'
 
-@Component
+@Component({
+  components: {
+    TheHeader,
+  },
+})
 export default class App extends Vue {
   get isHome() {
     return this.$route.name === 'home'
