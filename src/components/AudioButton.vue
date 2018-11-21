@@ -24,16 +24,8 @@ export default class AudioButton extends Vue {
   })
   fileName!: string
 
-  get mp3Url() {
-    return this.getUrl('mp3')
-  }
-
-  get oggUrl() {
-    return this.getUrl('ogg')
-  }
-
-  getUrl(type: string) {
-    return `http://packs.shtooka.net/eng-wims-mary-num/${type}/${this.fileName}.${type}` // eslint-disable-line prettier/prettier
+  get getUrl() {
+    return `http://www.lexisrex.com/googletts/en/${this.fileName}.mp3`
   }
 
   @Watch('fileName')
@@ -42,7 +34,7 @@ export default class AudioButton extends Vue {
   }
 
   play() {
-    const audioEl = new Audio(this.oggUrl)
+    const audioEl = new Audio(this.getUrl)
     this.isPlaying = true
 
     audioEl.addEventListener('ended', () => {
