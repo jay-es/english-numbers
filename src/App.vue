@@ -32,6 +32,7 @@ export default class App extends Vue {
 </script>
 <style lang="scss">
 #app {
+  font-family: 'Roboto Slab', serif;
   text-align: center;
 }
 .icon-btn {
