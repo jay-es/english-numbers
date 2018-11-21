@@ -1,11 +1,11 @@
 <template>
-  <section class="section list">
+  <section class="section list-view">
     <div class="container">
       <table class="table is-fullwidth">
         <thead>
           <th>Number</th>
           <th>English</th>
-          <th>Pronunciation</th>
+          <th>Pro&shy;nun&shy;ci&shy;a&shy;tion</th>
         </thead>
         <tbody>
           <tr

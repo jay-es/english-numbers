@@ -1,5 +1,5 @@
 <template>
-  <section class="section card">
+  <section class="section card-view">
     <div class="container">
       <div class="columns is-mobile has-text-centered">
         <aside class="column is-narrow">

@@ -1,14 +1,14 @@
 <template>
-  <div class="home">
+  <div class="home-view">
     <section class="hero is-primary">
       <div class="hero-body">
         <div class="container">
           <h1 class="title">
             English Numbers
           </h1>
-          <!-- <h2 class="subtitle">
-            Primary subtitle
-          </h2> -->
+          <h2 class="subtitle">
+            1 - 100
+          </h2>
         </div>
       </div>
     </section>
