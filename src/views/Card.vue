@@ -62,6 +62,21 @@ export default class Card extends Vue {
     return this.numbers[this.currentIndex - 1]
   }
 
+  created() {
+    const { isRandom, maxNum } = this.$store.state
+    const tmpNumbers = numbers.slice(0, maxNum)
+
+    if (isRandom) {
+      // シャッフル
+      for (let i = tmpNumbers.length; i--; ) {
+        const r = Math.floor(Math.random() * i)
+        ;[tmpNumbers[r], tmpNumbers[i]] = [tmpNumbers[i], tmpNumbers[r]]
+      }
+    }
+
+    this.numbers = tmpNumbers
+  }
+
   goPrev() {
     this.currentIndex--
   }
