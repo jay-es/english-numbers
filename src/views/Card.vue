@@ -16,8 +16,14 @@
         </aside>
 
         <main class="column">
-          <p class="title">{{ currentNumber.num }}</p>
-          <p class="subtitle">{{ currentNumber.txt }}</p>
+          <div
+            v-touch="goNext"
+            v-touch:swipe.left="goNext"
+            v-touch:swipe.right="goPrev"
+          >
+            <p class="title">{{ currentNumber.num }}</p>
+            <p class="subtitle">{{ currentNumber.txt }}</p>
+          </div>
           <audio-button :file-name="currentNumber.file"/>
         </main>
 
@@ -78,10 +84,14 @@ export default class Card extends Vue {
   }
 
   goPrev() {
-    this.currentIndex--
+    if (this.prevNumber) {
+      this.currentIndex--
+    }
   }
   goNext() {
-    this.currentIndex++
+    if (this.nextNumber) {
+      this.currentIndex++
+    }
   }
 }
 </script>
@@ -91,6 +101,8 @@ export default class Card extends Vue {
   font-size: 16vw;
 }
 .subtitle {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
   font-size: 4vw;
 }
 .move-btn {
