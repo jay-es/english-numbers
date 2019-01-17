@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <the-header/>
+    <the-header :is-home="isHome"/>
 
     <router-view/>
 

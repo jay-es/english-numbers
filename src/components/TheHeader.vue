@@ -21,9 +21,10 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  computed: {
-    isHome(): boolean {
-      return this.$route.name === 'home'
+  props: {
+    isHome: {
+      type: Boolean,
+      required: true,
     },
   },
 })
