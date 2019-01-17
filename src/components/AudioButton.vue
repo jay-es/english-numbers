@@ -1,13 +1,6 @@
 <template>
-  <button
-    :disabled="isPlaying"
-    class="button is-primary is-outlined icon-btn"
-    @click="play"
-  >
-    <b-icon
-      icon="volume-high"
-      class="audio-button-icon"
-    />
+  <button :disabled="isPlaying" class="button is-primary is-outlined icon-btn" @click="play">
+    <b-icon icon="volume-high" class="audio-button-icon"/>
   </button>
 </template>
 

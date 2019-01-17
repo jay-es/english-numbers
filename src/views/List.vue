@@ -8,17 +8,11 @@
           <th>Pro&shy;nun&shy;ci&shy;a&shy;tion</th>
         </thead>
         <tbody>
-          <tr
-            v-for="(n, i) of numbers"
-            :key="i"
-          >
+          <tr v-for="(n, i) of numbers" :key="i">
             <td>{{ n.num }}</td>
             <td>{{ n.txt }}</td>
             <td>
-              <audio-button
-                :file-name="n.file"
-                class="is-small"
-              />
+              <audio-button :file-name="n.file" class="is-small"/>
             </td>
           </tr>
         </tbody>

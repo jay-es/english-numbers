@@ -2,30 +2,17 @@
   <div class="home-view">
     <section class="section">
       <div class="field">
-        Max: {{ maxNum }}<br>
-        <input
-          v-model.number="maxNum"
-          type="range"
-          min="10" max="100" step="10"
-        />
+        Max: {{ maxNum }}
+        <br>
+        <input v-model.number="maxNum" type="range" min="10" max="100" step="10">
       </div>
 
       <div class="field">
         <b-checkbox v-model="isRandom">Randomize</b-checkbox>
       </div>
 
-      <router-link
-        class="button is-primary is-large is-outlined"
-        to="/card"
-      >
-        Start
-      </router-link>
-      <router-link
-        class="button is-primary is-large is-outlined"
-        to="/list"
-      >
-        List
-      </router-link>
+      <router-link class="button is-primary is-large is-outlined" to="/card">Start</router-link>
+      <router-link class="button is-primary is-large is-outlined" to="/list">List</router-link>
     </section>
   </div>
 </template>

@@ -8,19 +8,12 @@
             class="button is-primary is-inverted move-btn"
             @click="goPrev"
           >
-            <b-icon
-              icon="chevron-left"
-              size="is-large"
-            />
+            <b-icon icon="chevron-left" size="is-large"/>
           </button>
         </aside>
 
         <main class="column">
-          <div
-            v-touch="goNext"
-            v-touch:swipe.left="goNext"
-            v-touch:swipe.right="goPrev"
-          >
+          <div v-touch="goNext" v-touch:swipe.left="goNext" v-touch:swipe.right="goPrev">
             <p class="title">{{ currentNumber.num }}</p>
             <p class="subtitle">{{ currentNumber.txt }}</p>
           </div>
@@ -33,10 +26,7 @@
             class="button is-primary is-inverted move-btn"
             @click="goNext"
           >
-            <b-icon
-              icon="chevron-right"
-              size="is-large"
-            />
+            <b-icon icon="chevron-right" size="is-large"/>
           </button>
         </aside>
       </div>

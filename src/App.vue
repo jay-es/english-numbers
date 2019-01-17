@@ -5,19 +5,13 @@
     <router-view/>
 
     <section v-if="!isHome" class="section">
-      <router-link
-        class="button is-primary is-small is-outlined icon-btn"
-        to="/"
-      >
-        <b-icon
-          icon="home"
-          custom-size="mdi-18px"
-        />
+      <router-link class="button is-primary is-small is-outlined icon-btn" to="/">
+        <b-icon icon="home" custom-size="mdi-18px"/>
       </router-link>
     </section>
 
     <footer class="footer">
-      <div class="container">&copy; jshindo-gladd</div>
+      <div class="container">&copy; jshindo</div>
     </footer>
   </div>
 </template>
