@@ -35,29 +35,31 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import Vue from 'vue'
 import AudioButton from '@/components/AudioButton.vue'
 import { numbers, NumberInfo } from '@/common/numbers'
 
-@Component({
+export default Vue.extend({
   components: {
     AudioButton,
   },
-})
-export default class Card extends Vue {
-  private currentIndex: number = 0
-  private numbers: NumberInfo[] = numbers
-
-  get currentNumber(): NumberInfo {
-    return this.numbers[this.currentIndex]
-  }
-  get nextNumber(): NumberInfo {
-    return this.numbers[this.currentIndex + 1]
-  }
-  get prevNumber(): NumberInfo {
-    return this.numbers[this.currentIndex - 1]
-  }
-
+  data() {
+    return {
+      numbers,
+      currentIndex: 0,
+    }
+  },
+  computed: {
+    currentNumber(): NumberInfo {
+      return this.numbers[this.currentIndex]
+    },
+    nextNumber(): NumberInfo {
+      return this.numbers[this.currentIndex + 1]
+    },
+    prevNumber(): NumberInfo {
+      return this.numbers[this.currentIndex - 1]
+    },
+  },
   created() {
     const { isRandom, maxNum } = this.$store.state
     const tmpNumbers = numbers.slice(0, maxNum)
@@ -71,19 +73,20 @@ export default class Card extends Vue {
     }
 
     this.numbers = tmpNumbers
-  }
-
-  goPrev() {
-    if (this.prevNumber) {
-      this.currentIndex--
-    }
-  }
-  goNext() {
-    if (this.nextNumber) {
-      this.currentIndex++
-    }
-  }
-}
+  },
+  methods: {
+    goPrev() {
+      if (this.prevNumber) {
+        this.currentIndex--
+      }
+    },
+    goNext() {
+      if (this.nextNumber) {
+        this.currentIndex++
+      }
+    },
+  },
+})
 </script>
 
 <style lang="scss" scoped>

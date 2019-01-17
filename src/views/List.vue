@@ -22,18 +22,20 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import Vue from 'vue'
 import AudioButton from '@/components/AudioButton.vue'
 import { numbers, NumberInfo } from '@/common/numbers'
 
-@Component({
+export default Vue.extend({
   components: {
     AudioButton,
   },
+  data() {
+    return {
+      numbers,
+    }
+  },
 })
-export default class List extends Vue {
-  private numbers: NumberInfo[] = numbers
-}
 </script>
 
 <style lang="scss" scoped>

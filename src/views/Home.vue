@@ -18,24 +18,28 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import Vue from 'vue'
 
-@Component
-export default class Home extends Vue {
-  get isRandom() {
-    return this.$store.state.isRandom
-  }
-  set isRandom(val) {
-    this.$store.commit('update', { isRandom: val })
-  }
-
-  get maxNum() {
-    return this.$store.state.maxNum
-  }
-  set maxNum(val) {
-    this.$store.commit('update', { maxNum: val })
-  }
-}
+export default Vue.extend({
+  computed: {
+    isRandom: {
+      get(): boolean {
+        return this.$store.state.isRandom
+      },
+      set(val: boolean) {
+        this.$store.commit('update', { isRandom: val })
+      },
+    },
+    maxNum: {
+      get(): number {
+        return this.$store.state.maxNum
+      },
+      set(val: number) {
+        this.$store.commit('update', { maxNum: val })
+      },
+    },
+  },
+})
 </script>
 
 <style lang="scss" scoped>

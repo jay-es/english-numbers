@@ -18,14 +18,15 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import Vue from 'vue'
 
-@Component
-export default class TheHeader extends Vue {
-  get isHome() {
-    return this.$route.name === 'home'
-  }
-}
+export default Vue.extend({
+  computed: {
+    isHome(): boolean {
+      return this.$route.name === 'home'
+    },
+  },
+})
 </script>
 
 <style lang="scss" scoped>
