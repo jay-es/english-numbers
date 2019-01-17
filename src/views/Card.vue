@@ -17,7 +17,7 @@
             <p class="title">{{ currentNumber.num }}</p>
             <p class="subtitle">{{ currentNumber.txt }}</p>
           </div>
-          <audio-button :file-name="currentNumber.file"/>
+          <audio-button :file-url="currentNumber.url"/>
         </main>
 
         <aside class="column is-narrow">

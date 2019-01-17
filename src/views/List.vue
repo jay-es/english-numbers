@@ -12,7 +12,7 @@
             <td>{{ n.num }}</td>
             <td>{{ n.txt }}</td>
             <td>
-              <audio-button :file-name="n.file" class="is-small"/>
+              <audio-button :file-url="n.url" class="is-small"/>
             </td>
           </tr>
         </tbody>

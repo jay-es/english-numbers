@@ -9,7 +9,7 @@ import Vue from 'vue'
 
 export default Vue.extend({
   props: {
-    fileName: {
+    fileUrl: {
       type: String,
       required: true,
     },
@@ -19,19 +19,14 @@ export default Vue.extend({
       isPlaying: false,
     }
   },
-  computed: {
-    getUrl(): string {
-      return `http://www.lexisrex.com/googletts/en/${this.fileName}.mp3`
-    },
-  },
   watch: {
-    fileName() {
+    fileUrl() {
       this.isPlaying = false
     },
   },
   methods: {
     play() {
-      const audioEl = new Audio(this.getUrl)
+      const audioEl = new Audio(this.fileUrl)
       this.isPlaying = true
 
       audioEl.addEventListener('ended', () => {

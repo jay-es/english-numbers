@@ -1,9 +1,13 @@
 export class NumberInfo {
+  public readonly url: string
+
   constructor(
     public readonly num: number,
-    public readonly file: string,
+    fileName: string,
     public readonly txt: string,
-  ) {}
+  ) {
+    this.url = `https://www.lexisrex.com/googletts/en/${fileName}.mp3`
+  }
 }
 
 export const numbers: NumberInfo[] = [
