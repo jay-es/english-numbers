@@ -4,7 +4,7 @@
       <div class="columns is-mobile has-text-centered">
         <aside class="column is-narrow">
           <button
-            :disabled="!prevNumber"
+            :disabled="!hasPrev"
             class="button is-primary is-inverted move-btn"
             @click="goPrev"
           >
@@ -22,7 +22,7 @@
 
         <aside class="column is-narrow">
           <button
-            :disabled="!nextNumber"
+            :disabled="!hasNext"
             class="button is-primary is-inverted move-btn"
             @click="goNext"
           >
@@ -53,11 +53,11 @@ export default Vue.extend({
     currentNumber(): NumberInfo {
       return this.numbers[this.currentIndex]
     },
-    nextNumber(): NumberInfo {
-      return this.numbers[this.currentIndex + 1]
+    hasNext(): boolean {
+      return !!this.numbers[this.currentIndex + 1]
     },
-    prevNumber(): NumberInfo {
-      return this.numbers[this.currentIndex - 1]
+    hasPrev(): boolean {
+      return !!this.numbers[this.currentIndex - 1]
     },
   },
   created() {
@@ -76,12 +76,12 @@ export default Vue.extend({
   },
   methods: {
     goPrev() {
-      if (this.prevNumber) {
+      if (this.hasPrev) {
         this.currentIndex--
       }
     },
     goNext() {
-      if (this.nextNumber) {
+      if (this.hasNext) {
         this.currentIndex++
       }
     },
